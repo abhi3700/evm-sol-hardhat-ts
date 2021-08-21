@@ -8,4 +8,6 @@ artifacts/
 coverage*
 factories
 
+package-lock.json
+
 .env
