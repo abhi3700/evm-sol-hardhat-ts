@@ -82,4 +82,4 @@ npx hardhat verify --network <network> <DEPLOYED_CONTRACT_ADDRESS> "Constructor 
 
 ## Thanks
 
-If you like it than you can put a star ⭐ on the repo.
+If you like it, then you can put a star ⭐ on the repo.
