@@ -7,8 +7,16 @@
     "compile": "npx hardhat compile",
     "test": "npx hardhat test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhi3700/evm-sol-hardhat-ts.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhi3700/evm-sol-hardhat-ts/issues"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-etherscan": "^2.1.3",

@@ -103,9 +103,9 @@ const config: HardhatUserConfig = {
   //   apiKey: ETHERSCAN_API_KEY,
   // },
   gasReporter: {
-    currency: "USD",
-    gasPrice: 20,
-    // enabled: process.env.REPORT_GAS ? true : false,
+    currency: 'Gwei',
+    gasPrice: 90,
+    enabled: (process.env.REPORT_GAS) ? true : false
   },
   typechain: {
     outDir: "./build/typechain/",
