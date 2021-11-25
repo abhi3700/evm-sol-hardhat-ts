@@ -14,9 +14,13 @@ async function main(): Promise<void> {
   const TestTokenFactory: ContractFactory = await ethers.getContractFactory(
     'TestToken',
   );
-  const testToken: Contract = await TestTokenFactory.deploy();
+  const testToken: Contract = await TestTokenFactory.deploy("Test Token", "TST");
   await testToken.deployed();
   console.log('TestToken deployed to: ', testToken.address);
+  console.log(
+      `The transaction that was sent to the network to deploy the token contract: ${
+          testToken.deployTransaction.hash
+      }`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

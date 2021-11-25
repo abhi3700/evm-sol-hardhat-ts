@@ -29,7 +29,8 @@ import "@nomiclabs/hardhat-etherscan";
 // const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "";
 // const ALCHEMY_KEY = process.env.ALCHEMY_KEY || "";
 const INFURA_API_KEY = process.env.INFURA_API_KEY || "";
-const DEPLOYER_PRIVATE_KEY_RINKEBY = process.env.DEPLOYER_PRIVATE_KEY_RINKEBY || "";
+const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY || "";
+// const DEPLOYER_PRIVATE_KEY_RINKEBY = process.env.DEPLOYER_PRIVATE_KEY_RINKEBY || "";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -64,16 +65,16 @@ const config: HardhatUserConfig = {
     // coverage: {
     //   url: "http://127.0.0.1:8555",
     // },
-    // mainnet: {
-    //   url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
-    //   chainId: 1,
-    //   accounts: [`0x${DEPLOYER_PRIVATE_KEY_MAINNET}`],
-    // },
+    mainnet: {
+      url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
+      chainId: 1,
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`],
+    },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
       // url: "https://rinkeby.infura.io/v3/24d441e3175047bfb04c60e8221878c9",
       chainId: 4,
-      accounts: [`0x${DEPLOYER_PRIVATE_KEY_RINKEBY}`],
+      accounts: [`0x${DEPLOYER_PRIVATE_KEY}`],
       // accounts: ["0xcf2a6872928392175e383fc10f93c13eab0c050bd4dbd6b45201fad5bd9409b7"],
     },
     // rinkeby: createTestnetConfig("rinkeby"),
@@ -89,10 +90,7 @@ const config: HardhatUserConfig = {
           },
         },
       },
-      {
-        version: "0.6.6",
-      },
-    ],
+    ]
   },
   paths: {
     sources: "contracts",
@@ -103,9 +101,9 @@ const config: HardhatUserConfig = {
   //   apiKey: ETHERSCAN_API_KEY,
   // },
   gasReporter: {
-    currency: 'Gwei',
-    gasPrice: 90,
-    enabled: (process.env.REPORT_GAS) ? true : false
+    currency: "USD",
+    gasPrice: 20,
+    // enabled: process.env.REPORT_GAS ? true : false,
   },
   typechain: {
     outDir: "./build/typechain/",

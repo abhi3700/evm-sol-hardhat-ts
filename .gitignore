@@ -11,3 +11,4 @@ factories
 package-lock.json
 
 .env
+.DS_Store
